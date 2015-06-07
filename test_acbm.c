@@ -5,8 +5,8 @@
 
 
 int MatchFound(void *id, int index, void *data){
-    printf("%s\n", (char *) id);
-    printf("%d\n",index);
+    printf("id:%s\n", (char *) id);
+    printf("index:%d\n",index);
     return 0;
 }
 
@@ -38,6 +38,7 @@ int main(int argc, char **argv)
     acsmCompile (acsm);
     //acsmSearch函数的倒数第二个参数就是 MatchFound 函数中的 data 参数，所以 MatchFound 中 data 的实际数据类型就是 acsmSearch 的倒数第二个参数的实际数据类型
     acsmSearch(acsm, text, strlen(text), MatchFound, (void *) 0, &start_state);
+    printf("start_state:%d\n",start_state);
     acsmFree(acsm);
     return 0;
 }

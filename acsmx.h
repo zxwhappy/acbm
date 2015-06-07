@@ -114,6 +114,7 @@ int acsmCompile ( ACSM_STRUCT * acsm
 
 //acsmSearch函数的倒数第二个参数就是 Match 函数中的 data 参数
 //所以 Match函数 中 data 的实际数据类型就是 acsmSearch 的倒数第二个参数的实际数据类型
+//Match函数 返回值显示的指定为0时可以匹配字符串中所有的关键词，否则，当匹配一个关键词后就返回了
 int acsmSearch ( ACSM_STRUCT * acsm,unsigned char * T, int n, 
 #ifdef DETECTION_OPTION_TREE
 		int (*Match)(void * id, void *tree, int index, void *data),
